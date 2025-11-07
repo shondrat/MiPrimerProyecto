@@ -1,6 +1,8 @@
+import java.io.File: //lectura
 import java.io.FileWriter;
-import java.io.IOException; //
-Necesario para manejar errores de entrada/salida
+import java.io.IOException; //Necesario para manejar errores de entrada/salida
+import java.uti.Scanner; //leer archivo
+
 public class ManejoArchivos {
     public static void
     main(String[] args) {
@@ -21,6 +23,27 @@ public class ManejoArchivos {
         system.out.println("Ocurrio un error al escribir el archivo.");
         e.printStackTrace();
        }
-       //---- Termina el codigo nuevo ----
+      
+      //bloque 2
+      system.out.println("\n---Leyendo el contendo del archivo ---"):
+      try {
+        file archivo = new file("datos.txt");
+        Scanner scanner = new Scanner(archivo);
+
+        //leer archivo linea por linea
+        while
+        (scanner.hasNextLine()) {
+            String linea = 
+            scanner.nextLine();
+
+            system.out.println(linea);
+        }
+
+        scanner.close(); //siempre cierra el scanner
+
+      } catch (IOException e) {
+        system.out.println("ocurrio un error al leer el archivo.");
+        e.printStackTrace();
+      }
     }
 }
